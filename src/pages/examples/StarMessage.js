@@ -10,7 +10,7 @@ const StarMessage = () => {
 
     const allMessages = async () => {
         try {
-            const response = await axios.get("/api/refreshMessages");
+            const response = await Axios.get("/api/refreshMessages");
             // console.log(response.data)
             setMessage(response.data)
         } catch (error) {

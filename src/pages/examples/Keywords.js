@@ -33,7 +33,7 @@ const Keywords = () => {
 
         try {
 
-            await axios.post('/api/tag/add', { tag: keyword });
+            await Axios.post('/api/tag/add', { tag: keyword });
             // console.log("add keyword : ", response);
             alert("saved")
             setKeyword("")
@@ -49,7 +49,7 @@ const Keywords = () => {
 
 
         try {
-            const response = await axios.post(`/api/tag/edit/${id}`, { tag: editKeyword });
+            const response = await Axios.post(`/api/tag/edit/${id}`, { tag: editKeyword });
             console.log("Update Response: ", response);
             getKeyword();
             alert("updated");
@@ -65,7 +65,7 @@ const Keywords = () => {
     // Get All KeyWord
     const getKeyword = async () => {
         try {
-            const { data } = await axios.get('/api/tag');
+            const { data } = await Axios.get('/api/tag');
             // console.log("Keyword response ", data);
             SetKeywordData(data);
         }
@@ -78,7 +78,7 @@ const Keywords = () => {
     // Delete Keyword
     const deleteKeywordHandler = async (id) => {
         try {
-            const response = await axios.post(`/api/tag/del/${id}`);
+            const response = await Axios.post(`/api/tag/del/${id}`);
             alert("Keyword Deleted");
             getKeyword();
             console.log("delete response", response);

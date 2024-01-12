@@ -15,7 +15,7 @@ const PricingPage = ({ history }) => {
     const handlesubsType = async (subsType) => {
         console.log(subsType)
         try {
-            const response = await axios.post('/api/package/add',
+            const response = await Axios.post('/api/package/add',
                 { package: subsType },
             )
             if (response.status === 200) {

@@ -29,7 +29,7 @@ const QrPage = ({ history }) => {
         });
 
         socket.on("user disconnected", async () => {
-            const { data } = await axios.post("/api/logout");
+            const { data } = await Axios.post("/api/logout");
             history.push("/", { replace: true });
         });
 

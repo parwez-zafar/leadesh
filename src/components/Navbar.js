@@ -8,12 +8,13 @@ import Profile3 from "../assets/img/team/profile-picture-3.jpg";
 import { Link } from "react-router-dom";
 import { Routes } from "../routes";
 import axios from "axios";
+import Axios from "../axios";
 
 export default (props) => {
   const [notifications, setNotifications] = useState(NOTIFICATIONS_DATA);
 
   const handleLogout = () => {
-    axios.post('/api/logout', {
+    Axios.post('/api/logout', {
     })
       .then(response => {
         console.log('Logout successful', response);

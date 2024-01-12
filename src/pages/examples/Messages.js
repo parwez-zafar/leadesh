@@ -62,7 +62,7 @@ const Messages = () => {
 
     const allMessages = async () => {
         try {
-            const response = await axios.get("/api/refreshMessages");
+            const response = await Axios.get("/api/refreshMessages");
             console.log(response)
             setMessage(response.data)
         } catch (error) {
@@ -74,7 +74,7 @@ const Messages = () => {
 
     const getMe = async () => {
         try {
-            const { data } = await axios.get('/api/getMe')
+            const { data } = await Axios.get('/api/getMe')
             // console.log(data);
             setUser(data);
         }
@@ -99,7 +99,7 @@ const Messages = () => {
     }
     const handleStarClick = async (id) => {
         try {
-            const response = await axios.post(`/api/message/star/${id}`);
+            const response = await Axios.post(`/api/message/star/${id}`);
             console.log("start ", response);
             allMessages();
         }

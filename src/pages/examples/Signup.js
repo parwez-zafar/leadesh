@@ -143,7 +143,7 @@ const SignUp = () => {
     const requestDataString = JSON.stringify(requestData);
     localStorage.setItem("requestData", requestDataString);
     try {
-      const response = await axios.post("/api/signup", requestData);
+      const response = await Axios.post("/api/signup", requestData);
       const jwt = response.data.jwt;
 
       if (response.status === 201) {
